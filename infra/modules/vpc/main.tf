@@ -1,7 +1,16 @@
+
 variable "aws_region" {}
 variable "vpc_cidr_block" {}
 variable "public_subnet_cidr" {}
 variable "availability_zone" {}
+
+terraform {
+  backend "s3" {}
+}
+
+provider "aws" {
+  region = var.aws_region
+}
 
 resource "aws_vpc" "bendit_vpc" {
   cidr_block = var.vpc_cidr_block
