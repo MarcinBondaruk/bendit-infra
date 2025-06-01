@@ -1,3 +1,15 @@
+variable "security_group_id" {}
+variable "associate_public_ip_address" {}
+variable "instance_type" {}
+variable "aws_region" {}
+variable "subnet_id" {}
+variable "ami_id" {}
+variable "key_name" {}
+
+terraform {
+  backend "s3" {}
+}
+
 provider "aws" {
   region = var.aws_region
 }

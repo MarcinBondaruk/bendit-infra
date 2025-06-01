@@ -1,3 +1,7 @@
+variable "zone_id" {}
+variable "record_name" {}
+variable "record_type" {}
+
 resource "aws_route53_record" "bendit" {
   zone_id = var.zone_id
   name    = var.record_name
